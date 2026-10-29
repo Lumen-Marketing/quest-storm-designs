@@ -86,13 +86,10 @@ function App() {
     <main id="main">
       <section className="sc-hero sc-cut" aria-labelledby="hero-title">
         <LightField grain paused={still}/>
+        <div className="sc-hero-photo" aria-hidden="true"><img src={photos.storm} alt="" fetchPriority="high"/></div>
         <div className="sc-hero-stage sc-container">
           <p className="sc-eyebrow"><span className="sc-signal"/>ARIZONA / STORM RESPONSE</p>
           <span className="sc-stage-note">YOUR HOME.<br/>YOUR PEACE OF MIND.</span>
-          <figure className="sc-hero-photo">
-            <img src={photos.storm} alt="Arizona home beneath an approaching storm" fetchPriority="high"/>
-            <figcaption>AN ARIZONA HOME / STORM SKIES</figcaption>
-          </figure>
           <span className="sc-stage-index" aria-hidden="true">QUEST / 01</span>
         </div>
         <div className="sc-hero-bottom-band sc-container">
