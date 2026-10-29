@@ -5,7 +5,7 @@ import './gallery.css';
 const directions=[
   {name:'Ridge',number:'01',path:'./direction-1-after-the-storm.html',description:'An oversized condensed headline and a tightly composed photo grid. Explore roof hotspots, switch photographs, and scroll through stacked inspection sheets.',tags:['Photo grid','Big Shoulders + Hanken','Scroll stack']},
   {name:'Fieldwork',number:'02',path:'./direction-2-roof-report.html',description:'Inspired by the DnD site: a moving iridescent color field, spacious type, and soft word reveals. Drag between street and roof views, then explore the photographic inspection guide.',tags:['Iridescent light','Bricolage + Sora','Photo reveal + word motion']},
-  {name:'Afterlight',number:'03',path:'./direction-3-stormline.html',description:'A black-and-orange composition with overlapping photographic lenses. Switch the front photo, open the roof panels, and browse a horizontal inspection story.',tags:['Overlapping lenses','Syne + Outfit','Expanding photo panels']}
+  {name:'Stormcut',number:'03',path:'./direction-3-stormline.html',description:'An ember-orange and black editorial design. Asymmetric cut-through sections, flowing Grainient hero and footer, and Aurora light fields bring a bold new edge to the roofing story.',tags:['Asymmetric cuts','Orange + black','Grainient + Aurora']}
 ];
 function Preview({direction,mode}) {
   const container=useRef(null);

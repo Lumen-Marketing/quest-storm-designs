@@ -7,7 +7,7 @@ Three independent, interactive homepage designs for an Arizona storm roofing cam
 - [Compare all three](https://lumen-marketing.github.io/quest-storm-designs/)
 - [Ridge](https://lumen-marketing.github.io/quest-storm-designs/direction-1-after-the-storm.html)
 - [Fieldwork](https://lumen-marketing.github.io/quest-storm-designs/direction-2-roof-report.html)
-- [Afterlight](https://lumen-marketing.github.io/quest-storm-designs/direction-3-stormline.html)
+- [Stormcut](https://lumen-marketing.github.io/quest-storm-designs/direction-3-stormline.html)
 
 The comparison page includes real live previews, a desktop/mobile toggle, and a click-to-interact cover. Each design opens as a complete page.
 
@@ -15,21 +15,21 @@ The comparison page includes real live previews, a desktop/mobile toggle, and a 
 
 - **Ridge:** the selected urban streetwear reference. Condensed type, a compact photo grid, white framing, dark blocks, and orange actions. Big Shoulders + Hanken Grotesk. White surfaces and photo trays. Native scrolling inspection sheets.
 - **Fieldwork:** the DnD student workflow website and its existing code, adapted to roofing. An iridescent mint, lavender and pink light field, spacious type, word reveals, and unframed real photographs. Bricolage Grotesque + Sora. A drag-to-reveal photograph and an inspection lens.
-- **Afterlight:** the black-and-orange circular photograph reference and dark editorial sites. Overlapping photographic lenses, rounded navigation, and wide display type. Syne + Outfit. Dark film with overlapping photo planes. Expanding photographic panels.
+- **Stormcut:** a cohesive combination of the supplied orange-and-black editorial references and asymmetric Valorant-style section boundaries. The second reference leads the hero: a central roof sculpture, an ember glow, and a bottom-anchored TechText headline. Outfit type, angular photos, and ruled interactions carry the system through the page.
 
 The task management reference informed the desired polish. No task folders, dashboard furniture, or task management workflow is used.
 
 ## Same story, different furniture
 
-| Section | Ridge | Fieldwork | Afterlight |
+| Section | Ridge | Fieldwork | Stormcut |
 | --- | --- | --- | --- |
-| Hero | Condensed masthead over a compact photo grid | Iridescent light field, spacious headline and unframed street/roof reveal | Wide title above overlapping circular photographs |
-| Roof study | Numbered hotspots and a zoom slider | Movable magnifying window and inspection area tabs | Click-to-expand photographic accordion |
-| Inspection steps | React Bits ScrollStack during normal page scroll | Numbered tabbed photo viewer with previous/next controls | Horizontal photo story with scroll snapping and arrows |
-| Homeowner decision | Orange split statement with a dark action | Pastel Grainient surface and an offset storm photo | Oversized warm statement beside an underlined action |
-| Questions | Ruled list beside a condensed heading | Two-column question field | Numbered questions beside a photographic heading |
-| Contact | Dark rectangular two-column invitation | Pale open band with ruled contact links | Circular action beside oversized type |
-| Footer | Compact white row | Open white wordmark row | Dark stacked link groups |
+| Hero | Condensed masthead over a compact photo grid | Iridescent light field, spacious headline and unframed street/roof reveal | Bottom-anchored TechText headline, central roof sculpture, and moving Grainient |
+| Roof study | Numbered hotspots and a zoom slider | Movable magnifying window and inspection area tabs | Ruled inspection selectors beside an asymmetrically cut photograph |
+| Inspection steps | React Bits ScrollStack during normal page scroll | Numbered tabbed photo viewer with previous/next controls | Staggered, angular photographic steps |
+| Homeowner decision | Orange split statement with a dark action | Pastel Grainient surface and an offset storm photo | Oversized warm statement on an Aurora light field |
+| Questions | Ruled list beside a condensed heading | Two-column question field | Numbered questions beside an editorial headline |
+| Contact | Dark rectangular two-column invitation | Pale open band with ruled contact links | Angled inspection action beside oversized type |
+| Footer | Compact white row | Open white wordmark row | Moving Grainient, stacked links, and a full-width wordmark |
 
 ## How the trade informs the interaction
 
@@ -44,7 +44,7 @@ The task management reference informed the desired polish. No task folders, dash
 
 All three include mobile navigation, expandable questions, phone links, and an inspection request panel. The request panel prepares an SMS draft addressed to the postcard's phone number. Visitors review and send it in their own text app.
 
-Ridge uses the official React Bits ScrollStack. Fieldwork adapts the existing DnD Iridescence component and word reveals, plus the official React Bits Grainient with a pastel palette. Other photo controls and compositions are purpose-built in React and Motion. Motion respects reduced-motion preferences.
+Ridge uses the official React Bits ScrollStack. Fieldwork adapts the existing DnD Iridescence component and word reveals, plus the official React Bits Grainient with a pastel palette. Stormcut uses the official React Bits Grainient, Aurora, and TechText components. Grainient uses the requested five-color orange palette, angle 55, flow 0.8, silk 0.35, and grain amount 0.08; its speed is 1.35 with pointer interaction disabled. Aurora uses orange/yellow/orange color stops, amplitude 1, blend 0.5, height 0.45, speed 2.3, glow 0.6, and no pointer interaction. The TechText headline uses weight 600, size 150 (auto-fitted per line), letter reveal, 4/2 dashes, 15 specks, no intro, click kick, and no guides. Section content reveals through GSAP ScrollTrigger with a gentle fade and vertical movement. Reduced-motion preferences are respected; Stormcut also includes a pause/resume control in its footer. Animated backgrounds retain a CSS fallback if WebGL is unavailable.
 
 ## Scope
 
@@ -52,7 +52,7 @@ This is a design prototype. No lead database, payment collection, or insurance c
 
 The phone number, no-cost inspection offer, and Arizona context come from the supplied Quest Roofing postcards. Confirm the final campaign presentation before customer launch.
 
-No AI-generated imagery is used. All photographs are self-hosted and free to use under the licenses below.
+No AI-generated raster imagery is used. Stormcut’s decorative roof sculpture is an inline SVG. All photographs are self-hosted and free to use under the licenses below.
 
 ## Photography
 
