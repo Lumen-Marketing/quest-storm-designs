@@ -15,7 +15,7 @@ The comparison page includes real live previews, a desktop/mobile toggle, and a 
 
 - **Ridge:** the selected urban streetwear reference. Condensed type, a compact photo grid, white framing, dark blocks, and orange actions. Big Shoulders + Hanken Grotesk. White surfaces and photo trays. Native scrolling inspection sheets.
 - **Fieldwork:** the DnD student workflow website and its existing code, adapted to roofing. An iridescent mint, lavender and pink light field, spacious type, word reveals, and unframed real photographs. Bricolage Grotesque + Sora. A drag-to-reveal photograph and an inspection lens.
-- **Stormcut:** a cohesive combination of the supplied orange-and-black editorial references and asymmetric Valorant-style section boundaries. The second reference leads the hero: a central roof sculpture, an ember glow, and a bottom-anchored TechText headline. Outfit type, angular photos, and ruled interactions carry the system through the page.
+- **Stormcut:** a cohesive combination of the supplied orange-and-black editorial references and asymmetric Valorant-style section boundaries. The second reference leads the hero: an angular photograph of an Arizona home under storm skies, an ember glow, and a bottom-anchored TechText headline. Outfit type, angular photos, and ruled interactions carry the system through the page.
 
 The task management reference informed the desired polish. No task folders, dashboard furniture, or task management workflow is used.
 
@@ -23,7 +23,7 @@ The task management reference informed the desired polish. No task folders, dash
 
 | Section | Ridge | Fieldwork | Stormcut |
 | --- | --- | --- | --- |
-| Hero | Condensed masthead over a compact photo grid | Iridescent light field, spacious headline and unframed street/roof reveal | Bottom-anchored TechText headline, central roof sculpture, and moving Grainient |
+| Hero | Condensed masthead over a compact photo grid | Iridescent light field, spacious headline and unframed street/roof reveal | Bottom-anchored TechText headline, angular storm-home photograph, and moving Grainient |
 | Roof study | Numbered hotspots and a zoom slider | Movable magnifying window and inspection area tabs | Ruled inspection selectors beside an asymmetrically cut photograph |
 | Inspection steps | React Bits ScrollStack during normal page scroll | Numbered tabbed photo viewer with previous/next controls | Staggered, angular photographic steps |
 | Homeowner decision | Orange split statement with a dark action | Pastel Grainient surface and an offset storm photo | Oversized warm statement on an Aurora light field |
@@ -52,7 +52,7 @@ This is a design prototype. No lead database, payment collection, or insurance c
 
 The phone number, no-cost inspection offer, and Arizona context come from the supplied Quest Roofing postcards. Confirm the final campaign presentation before customer launch.
 
-No AI-generated raster imagery is used. Stormcut’s decorative roof sculpture is an inline SVG. All photographs are self-hosted and free to use under the licenses below.
+No AI-generated raster imagery is used. All photographs are self-hosted and free to use under the licenses below.
 
 ## Photography
 

@@ -89,27 +89,10 @@ function App() {
         <div className="sc-hero-stage sc-container">
           <p className="sc-eyebrow"><span className="sc-signal"/>ARIZONA / STORM RESPONSE</p>
           <span className="sc-stage-note">YOUR HOME.<br/>YOUR PEACE OF MIND.</span>
-          <div className="sc-roof-sculpture" aria-hidden="true">
-            <svg viewBox="0 0 640 440" fill="none">
-              <defs>
-                <linearGradient id="roof-face" x1="164" y1="90" x2="472" y2="365" gradientUnits="userSpaceOnUse"><stop stopColor="#ffbb74"/><stop offset=".22" stopColor="#b6420d"/><stop offset=".43" stopColor="#30150d"/><stop offset=".7" stopColor="#0b0909"/><stop offset="1" stopColor="#f07828"/></linearGradient>
-                <linearGradient id="roof-edge" x1="167" y1="170" x2="471" y2="236" gradientUnits="userSpaceOnUse"><stop stopColor="#f9a257"/><stop offset=".48" stopColor="#c4490f"/><stop offset="1" stopColor="#26110d"/></linearGradient>
-                <linearGradient id="roof-side" x1="428" y1="180" x2="458" y2="365" gradientUnits="userSpaceOnUse"><stop stopColor="#63220b"/><stop offset="1" stopColor="#090909"/></linearGradient>
-                <linearGradient id="roof-inner" x1="275" y1="179" x2="352" y2="382" gradientUnits="userSpaceOnUse"><stop stopColor="#090909"/><stop offset=".75" stopColor="#21100a"/><stop offset="1" stopColor="#a64010"/></linearGradient>
-              </defs>
-              <path d="M117 208L286 68L492 201L454 232L286 124L155 233Z" fill="url(#roof-edge)"/>
-              <path d="M286 68L316 53L522 186L492 201Z" fill="#ef8b3d"/>
-              <path d="M492 201L522 186L522 244L484 274L454 232Z" fill="url(#roof-side)"/>
-              <path d="M155 233L286 124L454 232L454 361L379 399L379 258L285 197L237 237L237 354L165 384Z" fill="url(#roof-face)"/>
-              <path d="M454 232L484 215L484 344L454 361Z" fill="url(#roof-side)"/>
-              <path d="M285 197L315 181L409 242L379 258Z" fill="#e46a1b"/>
-              <path d="M379 258L409 242L409 382L379 399Z" fill="url(#roof-side)"/>
-              <path d="M237 237L285 197L315 216L267 256L267 337L237 354Z" fill="url(#roof-inner)"/>
-              <path d="M117 208L155 233L165 384L129 358Z" fill="#130c09"/>
-              <path d="M117 208L286 68L492 201M155 233L286 124L454 232" stroke="#ffd19b" strokeOpacity=".45"/>
-              <path d="M165 384L237 354M379 399L454 361" stroke="#f98432" strokeOpacity=".6"/>
-            </svg>
-          </div>
+          <figure className="sc-hero-photo">
+            <img src={photos.storm} alt="Arizona home beneath an approaching storm" fetchPriority="high"/>
+            <figcaption>AN ARIZONA HOME / STORM SKIES</figcaption>
+          </figure>
           <span className="sc-stage-index" aria-hidden="true">QUEST / 01</span>
         </div>
         <div className="sc-hero-bottom-band sc-container">
