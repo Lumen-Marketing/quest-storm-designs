@@ -17,3 +17,18 @@
 .fieldwork{--paper:#ffffff;--dialog-bg:#ffffff;background:#ffffff}.fw-header,.fw-header nav.open{background:#ffffff}.fw-dnd-hero .fw-street-roof{border:0;box-shadow:none;border-radius:10px}.fw-study,.fw-faq{background:#ffffff}.fw-inspection{border:0;padding:0;background:transparent;border-radius:0;box-shadow:none;gap:48px}.fw-findings{padding:0}.fw-lens-window{border:0;box-shadow:0 12px 32px #253f3c40;border-radius:4px}.fw-lens-bar{background:#ffffff}.fw-process{background:#dce9fc}.fw-step-stage{background:#ffffff;box-shadow:none}.fw-choice-photo{padding:0;background:transparent;border-radius:8px;box-shadow:none}.fw-choice-photo>img{border-radius:8px}.fw-choice{background:#c8c5f3}.fw-contact{background:#cdc8f2}.fw-footer{background:#ffffff}.fw-dnd-actions>a{background:#ffffff9c}.fw-motion-control{background:#ffffffa6}.fw-reveal-caption{background:#ffffffeb}.fw-dnd-hero .fw-reveal-line>span{background:#ffffff}
 @media(max-width:800px){.fw-inspection{gap:32px}.fw-findings{padding:0}.fw-choice-photo{padding:0}.fw-dnd-hero .fw-street-roof{border:0;box-shadow:none}}
 @media(max-width:560px){.fw-inspection{gap:24px;padding:0;border:0}.fw-findings{padding:0}.fw-choice-photo{padding:0}.fw-dnd-hero .fw-street-roof{border:0;box-shadow:none}}
+
+/* Fieldwork: a spectral hero followed by calm, alternating white sections. */
+.fw-dnd-hero{background:#0b1014;color:#f8faf5}
+.fw-prism{position:absolute!important;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.fw-prism canvas{display:block;width:100%;height:100%}
+.fw-dnd-hero:after{background:linear-gradient(180deg,#09111526 0%,#09111552 54%,#09111584 100%)}
+.fw-dnd-copy>p{color:#f4f8f2}
+.fw-dnd-actions>button{background:#ffffff;color:#1b3427}
+.fw-dnd-actions>a{background:#0e1b1e91;border-color:#ffffffb3;color:#ffffff}
+.fw-motion-control{background:#102325bd;color:#ffffff;border:1px solid #ffffff80}
+.fw-process,.fw-choice{background:#ffffff}
+.fw-choice{color:#20392b}
+.fw-choice-photo{order:2}
+.fw-choice-copy{order:1}
+@media(max-width:560px){.fw-choice-photo{order:2}.fw-choice-copy{order:1}}

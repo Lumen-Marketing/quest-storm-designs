@@ -4,8 +4,7 @@ import {motion,AnimatePresence,useReducedMotion} from 'motion/react';
 import {ArrowUpRight,ArrowRight,ArrowLeft,ArrowDown,Plus,Minus,X,List,HouseLine,MagnifyingGlass,Pause,Play} from '@phosphor-icons/react';
 import {photos,details,steps,questions,choice,ease} from './content';
 import RequestDialog from './RequestDialog';
-import Grainient from './components/Grainient';
-import Iridescence from './components/Iridescence';
+import Prism from './components/Prism';
 import './alternatives.css';
 import './fieldwork.css';
 
@@ -38,7 +37,7 @@ function App() {
     </header>
     <main id="main">
       <section className="fw-dnd-hero">
-        <Iridescence className="fw-iridescence" paused={paused}/>
+        <Prism className="fw-prism" animationType="rotate" timeScale={0.5} height={3.5} baseWidth={5.5} scale={3.6} hueShift={0} colorFrequency={1} glow={1} interactive={false} paused={paused}/>
         <div className="fw-dnd-copy"><motion.h1 initial={reduce?false:{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.8,ease}}>After the storm.<br/><span>Start with the roof.</span></motion.h1><p>A closer look. A clearer next step.<br/>No-cost roof inspections for Arizona homeowners after hail and wind.</p><div className="fw-dnd-actions"><button onClick={inspect}>Get a roof check<ArrowUpRight size={20}/></button><a href="#roof">See what we look for<ArrowDown size={20}/></a></div><button className="fw-motion-control" aria-label={paused?'Play background motion':'Pause background motion'} aria-pressed={paused} onClick={()=>setPaused(!paused)}>{paused?<Play size={14}/>:<Pause size={14}/>}<span>{paused?'Play motion':'Pause motion'}</span></button></div>
         <div className="fw-street-roof">
           <img src={photos.roof} className="fw-roof-view" alt="A close view of storm-damaged roof shingles"/>
@@ -76,7 +75,6 @@ function App() {
         </div>
       </section>
       <section className="fw-choice fw-pad">
-        <Grainient className="fw-grainient" colors={['#b9b2ed','#b5d9ed','#d8b0dc','#b6c2ed']} angle={35} flow={.5} speed={.35} silk={.3} grainAmount={.035} dpr={1} intro={false} clickSwirl={false} grainAnimated={false}/>
         <div className="fw-choice-photo"><img src={photos.storm} alt="An Arizona home beneath storm clouds" loading="lazy"/></div>
         <Reveal className="fw-choice-copy"><Words lines={['Your roof.','Your decision.']}/><p>{choice}</p><button className="fw-action fw-action-light" onClick={inspect}>Let’s take a look<ArrowUpRight size={23}/></button></Reveal>
       </section>
