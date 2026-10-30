@@ -37,7 +37,7 @@ function App() {
     </header>
     <main id="main">
       <section className="fw-dnd-hero">
-        <Prism className="fw-prism" animationType="rotate" timeScale={0.5} height={3.5} baseWidth={5.5} scale={3.6} hueShift={0} colorFrequency={1} glow={1} interactive={false} paused={paused}/>
+        <Prism className="fw-prism" animationType="rotate" timeScale={0.5} height={3.5} baseWidth={5.5} scale={3.6} hueShift={0} colorFrequency={1} colors={['#07182e','#145dc2','#75b8ff','#f3f9ff']} glow={1} interactive={false} paused={paused}/>
         <div className="fw-dnd-copy"><motion.h1 initial={reduce?false:{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.8,ease}}>After the storm.<br/><span>Start with the roof.</span></motion.h1><p>A closer look. A clearer next step.<br/>No-cost roof inspections for Arizona homeowners after hail and wind.</p><div className="fw-dnd-actions"><button onClick={inspect}>Get a roof check<ArrowUpRight size={20}/></button><a href="#roof">See what we look for<ArrowDown size={20}/></a></div><button className="fw-motion-control" aria-label={paused?'Play background motion':'Pause background motion'} aria-pressed={paused} onClick={()=>setPaused(!paused)}>{paused?<Play size={14}/>:<Pause size={14}/>}<span>{paused?'Play motion':'Pause motion'}</span></button></div>
         <div className="fw-street-roof">
           <img src={photos.roof} className="fw-roof-view" alt="A close view of storm-damaged roof shingles"/>
@@ -84,7 +84,7 @@ function App() {
       </section>
       <section className="fw-contact fw-pad"><div><h2>Start with<br/>the roof.</h2><p>A no-cost inspection.<br/>A clearer picture of what comes next.</p></div><div className="fw-contact-links"><button onClick={inspect}>Request an inspection<ArrowUpRight size={32}/></button><a href="tel:+16023996455">602-399-6455<ArrowUpRight size={25}/></a></div></section>
     </main>
-    <footer className="fw-footer"><a className="fw-footer-brand" href="#top">quest storm</a><span>Quest Storm by Quest Roofing</span><a href="./PHOTO-CREDITS.html">Photography credits<ArrowUpRight size={16}/></a><a href="./index.html">All three designs<ArrowUpRight size={16}/></a></footer>
+    <footer className="fw-footer"><a className="fw-footer-brand" href="#top">quest storm</a><span>Quest Storm by Quest Roofing</span><a href="./PHOTO-CREDITS.html">Photography credits<ArrowUpRight size={16}/></a><a href="./index.html">All four designs<ArrowUpRight size={16}/></a></footer>
     <RequestDialog open={contact} onClose={()=>setContact(false)}/>
   </div>;
 }

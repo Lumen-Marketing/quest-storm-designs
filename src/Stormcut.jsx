@@ -12,8 +12,8 @@ import RequestDialog from './RequestDialog';
 import './alternatives.css';
 import './stormcut.css';
 
-const emberColors = ['#120f17', '#2a0f0a', '#9a3412', '#f97316', '#fed7aa'];
-const auroraColors = ['#f97316', '#eab308', '#f97316'];
+const emberColors = ['#07182e', '#0b2d5c', '#145ec9', '#3f91f5', '#e9f3ff'];
+const auroraColors = ['#0a3c8c', '#3183e9', '#d7ebff'];
 gsap.registerPlugin(ScrollTrigger);
 
 function LightField({ grain = false, paused }) {
@@ -98,7 +98,7 @@ function App() {
             {!still && <div className="sc-tech-lines" aria-hidden="true">{['STORM HIT HOME?', 'LET’S TAKE', 'A CLOSER LOOK.'].map(line => <div className="sc-tech-line" key={line}>
               <TechText text={line} fontFamily="Outfit" fontWeight={600} fontSize={150} align="left"
                 reveal="letter" dashLength={4} dashGap={2} specks={15} intro="none" introDuration={2}
-                clickKick guides={false} accentColor="#fed7aa"/>
+                clickKick guides={false} accentColor="#b7dbff"/>
             </div>)}</div>}
           </div>
           <div className="sc-hero-summary"><p>A closer look at your roof.<br/>A clearer idea of what comes next.</p><Action onClick={inspect}>Get a no-cost inspection</Action><span>NO COST. NO OBLIGATION.</span></div>
@@ -171,7 +171,7 @@ function App() {
       <div className="sc-container">
         <div className="sc-section-label"><span>YOUR HOME. YOUR PEACE OF MIND.</span><a href="#top">BACK TO TOP<ArrowUpRight size={16}/></a></div>
         <Reveal className="sc-footer-invite"><h2>LET’S TAKE<br/>A <span>CLOSER LOOK.</span></h2><div><p>A no-cost roof inspection.<br/>Your next step starts here.</p><Action light onClick={inspect}>Request an inspection</Action></div></Reveal>
-        <div className="sc-footer-links"><a className="sc-footer-phone" href="tel:+16023996455">602-399-6455<ArrowUpRight size={23}/></a><div><a href="#roof">The inspection</a><a href="#process">How it works</a><a href="#questions">Questions</a></div><div><a href="./index.html">All three designs<ArrowUpRight size={15}/></a><a href="./PHOTO-CREDITS.html">Photography credits<ArrowUpRight size={15}/></a></div></div>
+        <div className="sc-footer-links"><a className="sc-footer-phone" href="tel:+16023996455">602-399-6455<ArrowUpRight size={23}/></a><div><a href="#roof">The inspection</a><a href="#process">How it works</a><a href="#questions">Questions</a></div><div><a href="./index.html">All four designs<ArrowUpRight size={15}/></a><a href="./PHOTO-CREDITS.html">Photography credits<ArrowUpRight size={15}/></a></div></div>
         <div className="sc-wordmark" aria-hidden="true">QUEST STORM<span>↗</span></div>
         <div className="sc-footer-bottom"><span>QUEST STORM BY QUEST ROOFING</span><span>ARIZONA / HAIL & WIND INSPECTIONS</span><button aria-pressed={paused} onClick={() => setPaused(!paused)} disabled={Boolean(reduce)}>{still ? <Play size={13}/> : <Pause size={13}/>} {reduce ? 'Reduced motion enabled' : paused ? 'Resume motion' : 'Pause motion'}</button></div>
       </div>
