@@ -47,6 +47,7 @@ const ScrollStack = ({
   smoothScroll = true,
   snap = false,
   useWindowScroll = false,
+  fitTallItems = false,
   onStackComplete
 }) => {
   const rootRef = useRef(null);
@@ -70,6 +71,7 @@ const ScrollStack = ({
       holdDistance,
       smoothScroll,
       snap,
+      fitTallItems,
       onStackComplete
     };
     scheduleRef.current?.();
@@ -124,15 +126,24 @@ const ScrollStack = ({
       const stackTop = resolveOffset(settings.stackPosition, viewHeight);
       const offset = settings.itemStackDistance;
       const heights = slots.map(slot => slot.offsetHeight);
+      let moved = false;
+      if (settings.fitTallItems) {
+        slots.forEach((slot, i) => {
+          const top = Math.min(stackTop + i * offset, viewHeight - heights[i]);
+          moved = write(`slotTop${i}`, top, value => {
+            slot.style.top = `${value}px`;
+          }) || moved;
+        });
+      }
       const tops = slots.map(slot => slot.getBoundingClientRect().top);
       const lastPin = stackTop + (slots.length - 1) * offset;
       const padTop = windowed ? 0 : stackTop;
       const endHeight =
         settings.holdDistance + (windowed ? 0 : Math.max(0, viewHeight - lastPin - heights[heights.length - 1]));
 
-      let moved = write('padTop', padTop, value => {
+      moved = write('padTop', padTop, value => {
         inner.style.paddingTop = `${value}px`;
-      });
+      }) || moved;
       moved =
         write('endHeight', endHeight, value => {
           end.style.height = `${value}px`;
