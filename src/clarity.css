@@ -10,3 +10,22 @@
 @media(min-width:1101px){.qc-hero{padding-left:170px}.qc-section{padding-left:170px}.qc-final{padding-left:170px}}
 @media(max-width:1100px){.qc-sidebar{display:none}.qc-hero{padding:0 3% 50px}.qc-hero-grid{min-height:600px}.qc-hero-copy{padding:55px 6% 30px}.qc-hero h1{font-size:7vw}.qc-section{padding:95px 5%}}
 @media(max-width:700px){.qc-header{height:70px;padding:0 5%;gap:12px}.qc-header nav{display:none}.qc-header nav.open{display:flex;position:absolute;z-index:20;top:70px;left:0;right:0;background:#fff;padding:25px;flex-direction:column}.qc-header-cta{margin-left:auto;font-size:0;gap:0;width:44px;height:44px;justify-content:center;padding:0}.qc-menu{display:grid;place-items:center;width:44px;height:44px}.qc-hero{padding:0 4% 25px}.qc-hero-grid{display:flex;flex-direction:column;min-height:0;border-radius:14px}.qc-hero-copy{padding:32px 6% 25px}.qc-kicker{font-size:9px}.qc-spark{font-size:25px}.qc-hero h1{font-size:clamp(52px,12vw,78px);margin:30px 0 20px}.qc-hero-lede{font-size:13px}.qc-hero-actions{margin-top:25px;gap:5px}.qc-hero-actions button{font-size:10px}.qc-hero-actions a{font-size:10px}.qc-hero-small{padding-top:35px}.qc-hero-photo{min-height:380px;height:380px}.qc-photo-bottom{left:22px;bottom:25px}.qc-photo-bottom strong{font-size:28px}.qc-section{padding:80px 6%}.qc-section-head{display:block;margin-bottom:35px}.qc-section-head h2{margin-top:20px}.qc-section h2,.qc-process h2{font-size:clamp(48px,11vw,70px)}.qc-roof-layout{grid-template-columns:1fr;gap:35px}.qc-roof-image{min-height:340px;height:340px}.qc-outline-index{font-size:90px}.qc-roof-copy>p{font-size:16px;margin:20px 0 35px}.qc-process-inner{padding:75px 5%}.qc-process-intro{display:block}.qc-process-intro h2{margin:20px 0}.qc-process-intro p{font-size:12px}.qc-stack-wrap{height:570px;margin-top:40px}.qc-stack-card{height:420px;display:flex;flex-direction:column-reverse}.qc-stack-card img{height:45%;width:100%}.qc-stack-copy{height:55%;padding:22px}.qc-stack-copy h3{font-size:48px;margin:18px 0 5px}.qc-stack-copy h4{font-size:14px}.qc-stack-copy p{font-size:11px;margin-top:9px}.qc-choice,.qc-questions{grid-template-columns:1fr;gap:38px}.qc-choice-image{height:330px}.qc-choice-copy h2{font-size:62px}.qc-final{padding:75px 6%;display:block}.qc-final h2{font-size:62px}.qc-final button{margin-top:35px}.qc-footer{padding:35px 6%;display:grid;grid-template-columns:1fr 1fr;line-height:1.6}}
+
+/* Full-bleed opening and full-section stacking on native page scroll. */
+.clarity{overflow:clip}
+.qc-page-stack>.scroll-stack__inner{padding-inline:0}
+.qc-page-stack .qc-page-card{width:100%;box-shadow:0 -17px 42px #111b162a}
+.qc-page-stack .qc-page-card--roof,.qc-page-stack .qc-page-card--process,.qc-page-stack .qc-page-card--choice,.qc-page-stack .qc-page-card--questions{min-height:100svh}
+.qc-page-stack .qc-page-card--hero{border-radius:0;box-shadow:none}
+.qc-hero{width:100%;max-width:none;margin:0;padding:0}
+.qc-hero-grid{min-height:calc(100svh - 82px);border-radius:0;box-shadow:none}
+.qc-hero-copy{padding:clamp(64px,6vw,110px) clamp(44px,7vw,120px) 42px}
+.qc-hero-photo{min-height:calc(100svh - 82px)}
+.qc-page-card--roof .qc-roof,.qc-page-card--choice .qc-choice,.qc-page-card--questions .qc-questions{min-height:100svh}
+.qc-process-steps{display:grid;gap:24px;margin-top:65px}
+.qc-process-steps .qc-stack-card{height:430px;box-shadow:none}
+.qc-process-steps .qc-stack-card:nth-child(3){background:#fff}
+@media(min-width:1101px){.qc-hero-copy{padding-left:170px;padding-right:5%}.qc-hero h1{font-size:clamp(62px,5.3vw,96px)}}
+@media(max-width:1100px){.qc-hero{padding:0}.qc-hero-grid{min-height:calc(100svh - 82px)}.qc-hero-copy{padding:64px 6% 38px}.qc-hero-photo{min-height:calc(100svh - 82px)}}
+@media(max-width:700px){.qc-hero{padding:0}.qc-hero-grid{min-height:0;border-radius:0}.qc-hero-copy{padding:40px 6% 30px}.qc-hero-photo{min-height:440px;height:440px}.qc-page-stack .qc-page-card{border-radius:12px 12px 0 0}.qc-page-stack .qc-page-card--hero{border-radius:0}.qc-page-card--roof .qc-roof,.qc-page-card--choice .qc-choice,.qc-page-card--questions .qc-questions{min-height:0}.qc-process-steps{gap:18px;margin-top:40px}.qc-process-steps .qc-stack-card{height:420px}}
+@media(prefers-reduced-motion:reduce){.qc-page-stack .scroll-stack__slot{position:relative;top:auto!important}.qc-page-stack .qc-page-card{transform:none!important;filter:none!important}.qc-page-stack .scroll-stack-card__shade{display:none}}
