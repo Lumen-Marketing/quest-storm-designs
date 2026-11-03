@@ -4,9 +4,10 @@ import {ArrowUpRight,ArrowDown,Desktop,DeviceMobile,Check,Play} from '@phosphor-
 import './gallery.css';
 const directions=[
   {name:'Ridge',number:'01',path:'./direction-1-after-the-storm.html',description:'An oversized condensed headline and a tightly composed photo grid. Explore roof hotspots, switch photographs, and scroll through stacked inspection sheets.',tags:['Photo grid','Big Shoulders + Hanken','Scroll stack']},
-  {name:'Fieldwork',number:'02',path:'./direction-2-roof-report.html',description:'A clean blue and white direction with a photo-led hero, rounded information cards, and natural typography. Compare street and roof views, explore the inspection steps, and open straightforward answers.',tags:['Clean cards','Blue + white','Street-to-roof reveal']},
+  {name:'Fieldwork',number:'02',path:'./direction-2-roof-report.html',description:'A roof photograph opens the story, with a compact inspection note layered over it. Compare street and roof views, review all three steps, and open clear answers.',tags:['Photo-led','Blue + white','Roof comparison']},
   {name:'Stormcut',number:'03',path:'./direction-3-stormline.html',description:'A navy, blue, and white editorial design. Asymmetric cut-through sections, flowing Grainient hero and footer, and Aurora light fields bring a bold new edge to the roofing story.',tags:['Asymmetric cuts','Blue + navy','Grainient + Aurora']},
-  {name:'Clarity',number:'04',path:'./direction-4-clarity.html',description:'An editorial blue-and-white direction with a cinematic roof photo, an indexed sidebar, animated headings, and a stacked inspection story.',tags:['Editorial photo','Blue + white','Scroll stack']}
+  {name:'Clarity',number:'04',path:'./direction-4-clarity.html',description:'An editorial blue-and-white direction with a cinematic roof photo, an indexed sidebar, animated headings, and a stacked inspection story.',tags:['Editorial photo','Blue + white','Scroll stack']},
+  {name:'Signal',number:'05',path:'./direction-5-signal.html',description:'A vivid blue direction with floating inspection notes and an interactive roof-focus panel. Switch between surface, edges, and context before following the three-step path.',tags:['Floating panels','Blue + white','Interactive focus']}
 ];
 function Preview({direction,mode}) {
   const container=useRef(null);
@@ -37,8 +38,8 @@ function App() {
   return <div className="gallery">
     <header className="gallery-header"><a href="./index.html" className="gallery-brand">quest<span>STORM</span></a><span>WEBSITE DESIGN REVIEW</span><a href="#designs">Explore the designs<ArrowDown size={16}/></a></header>
     <main>
-      <section className="gallery-intro"><div><p>Four distinct directions.</p><h1>Find the right<br/>first impression.</h1></div><div><p>Same roofing story.<br/>Four different ways to tell it.</p><span>Open any design full screen to explore the photos, motion, and interactions.</span></div></section>
-      <div className="gallery-toolbar" id="designs"><span>QUEST STORM / 4 DESIGNS</span><div className="gallery-view-toggle" role="group" aria-label="Preview viewport"><button aria-pressed={mode==='desktop'} onClick={()=>setMode('desktop')}><Desktop size={17}/>Desktop</button><button aria-pressed={mode==='mobile'} onClick={()=>setMode('mobile')}><DeviceMobile size={17}/>Mobile</button></div></div>
+      <section className="gallery-intro"><div><p>Five distinct directions.</p><h1>Find the right<br/>first impression.</h1></div><div><p>Same roofing story.<br/>Five different ways to tell it.</p><span>Open any design full screen to explore the photos, motion, and interactions.</span></div></section>
+      <div className="gallery-toolbar" id="designs"><span>QUEST STORM / 5 DESIGNS</span><div className="gallery-view-toggle" role="group" aria-label="Preview viewport"><button aria-pressed={mode==='desktop'} onClick={()=>setMode('desktop')}><Desktop size={17}/>Desktop</button><button aria-pressed={mode==='mobile'} onClick={()=>setMode('mobile')}><DeviceMobile size={17}/>Mobile</button></div></div>
       <div className="gallery-grid">{directions.map(d=><article className="gallery-card" key={d.name}>
         <div className="gallery-card-header"><div><span>{d.number}</span><h2>{d.name}</h2></div><a href={d.path}>Open full screen<ArrowUpRight size={18}/></a></div>
         <div className="gallery-card-content"><Preview direction={d} mode={mode}/><div className="gallery-card-body"><p>{d.description}</p><div className="gallery-feature-list">{['Desktop and mobile layouts','Working motion and interactions','Inspection request by text'].map(x=><span key={x}><Check size={16}/>{x}</span>)}</div><div className="gallery-tags">{d.tags.map(x=><span key={x}>{x}</span>)}</div></div></div>
