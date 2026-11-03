@@ -6,6 +6,7 @@ import { photos, details, steps, questions, choice, ease } from './content';
 import RequestDialog from './RequestDialog';
 import './alternatives.css';
 import './fieldwork-clean.css';
+import './fieldwork-rework.css';
 
 function Reveal({ children, className = '' }) {
   const reduced = useReducedMotion();
@@ -38,6 +39,7 @@ function App() {
       <section className="fw-hero" aria-labelledby="fw-title">
         <img className="fw-hero-photo" src={photos.work} alt="Roofing professional inspecting a home roof in Arizona" fetchPriority="high" />
         <div className="fw-hero-shade" />
+        <div className="fw-hero-field" aria-hidden="true">FIELD<br />WORK<span>01 / THE STORM</span></div>
         <div className="fw-hero-top"><span>ARIZONA / HAIL + WIND</span><span>QUEST STORM · BY QUEST ROOFING</span></div>
         <div className="fw-hero-copy">
           <motion.div initial={reduced ? false : { opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, ease }}>
@@ -55,9 +57,11 @@ function App() {
           <button onClick={inspect}>Book a no-cost inspection <ArrowUpRight size={19} /></button>
           <small>No cost. No obligation. You decide.</small>
         </div>
+        <div className="fw-photo-mark">ON THE ROOF <span>↗</span> / IN THE KNOW</div>
       </section>
 
       <div className="fw-facts" aria-label="Quest Storm information"><span>QUEEN CREEK, ARIZONA</span><span>ROC #355136</span><span>NO-COST ROOF INSPECTION</span><span>602-399-6455</span></div>
+      <div className="fw-ribbon" aria-hidden="true"><div>FROM THE STREET <b>✳</b> TO THE ROOF <b>✳</b> TO A CLEARER DECISION <b>✳</b> FROM THE STREET <b>✳</b> TO THE ROOF <b>✳</b> TO A CLEARER DECISION <b>✳</b></div></div>
 
       <section className="fw-roof" id="roof" aria-labelledby="fw-roof-title">
         <Reveal className="fw-roof-heading"><span className="fw-index">01 / THE ROOF</span><h2 id="fw-roof-title">The view from the street is only <em>the beginning.</em></h2><p>Hail and wind can leave details you cannot confirm from the driveway. Compare these illustrative views, then see what an inspection covers.</p></Reveal>
@@ -83,11 +87,11 @@ function App() {
         </div>
       </section>
 
-      <section className="fw-choice" aria-labelledby="fw-choice-title"><div><span className="fw-index">03 / YOUR CALL</span><h2 id="fw-choice-title">Your roof.<br /><em>Your decision.</em></h2></div><div><p>{choice}</p><button onClick={inspect}>Let’s take a look <ArrowUpRight size={19} /></button></div><span className="fw-choice-line" aria-hidden="true" /></section>
+      <section className="fw-choice" aria-labelledby="fw-choice-title"><img className="fw-choice-photo" src={photos.roof} alt="Close view of roof shingles" loading="lazy" /><div className="fw-choice-copy"><span className="fw-index">03 / YOUR CALL</span><h2 id="fw-choice-title">Your roof.<br /><em>Your decision.</em></h2></div><div className="fw-choice-card"><span>WHAT HAPPENS NEXT?</span><p>{choice}</p><button onClick={inspect}>Let’s take a look <ArrowUpRight size={19} /></button><small>NO COST / NO OBLIGATION</small></div><span className="fw-choice-line" aria-hidden="true" /></section>
 
-      <section className="fw-questions" id="questions" aria-labelledby="fw-questions-title"><Reveal className="fw-questions-heading"><span className="fw-index">04 / GOOD QUESTIONS</span><h2 id="fw-questions-title">Straight<br />answers.</h2><p>Questions are normal. Here are a few answers before anyone gets on the roof.</p></Reveal><div className="fw-question-list">{questions.map(([q, a], i) => <div key={q}><button aria-expanded={faq === i} aria-controls={`fw-answer-${i}`} onClick={() => setFaq(faq === i ? null : i)}><span>0{i + 1}</span><strong>{q}</strong>{faq === i ? <Minus size={19} /> : <Plus size={19} />}</button><AnimatePresence initial={false}>{faq === i && <motion.p id={`fw-answer-${i}`} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: reduced ? 0 : .22, ease }}>{a}</motion.p>}</AnimatePresence></div>)}</div></section>
+      <section className="fw-questions" id="questions" aria-labelledby="fw-questions-title"><Reveal className="fw-questions-heading"><span className="fw-index">04 / GOOD QUESTIONS</span><h2 id="fw-questions-title">Straight<br />answers.</h2><p>Questions are normal. Here are a few answers before anyone gets on the roof.</p></Reveal><div className="fw-question-stage"><div className="fw-question-list">{questions.map(([q, a], i) => <div key={q}><button aria-expanded={faq === i} aria-controls={`fw-answer-${i}`} onClick={() => setFaq(faq === i ? null : i)}><span>0{i + 1}</span><strong>{q}</strong>{faq === i ? <Minus size={19} /> : <Plus size={19} />}</button><AnimatePresence initial={false}>{faq === i && <motion.p id={`fw-answer-${i}`} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: reduced ? 0 : .22, ease }}>{a}</motion.p>}</AnimatePresence></div>)}</div><div className="fw-question-photo"><img src={photos.work} alt="Roofing professional at work on a roof" loading="lazy" /><span>REAL PHOTOS.<br />CLEAR ANSWERS.</span><small>FIELD NOTE / 04</small></div></div></section>
 
-      <section className="fw-last" aria-labelledby="fw-last-title"><span className="fw-index">QUEST STORM / ARIZONA</span><h2 id="fw-last-title">Get the facts.<br /><em>Then decide.</em></h2><div><p>Start with a no-cost roof inspection and photos you can review.</p><button onClick={inspect}>Request a roof check <ArrowUpRight size={20} /></button><a href="tel:+16023996455">Call 602-399-6455 <ArrowUpRight size={17} /></a></div></section>
+      <section className="fw-last" aria-labelledby="fw-last-title"><div className="fw-last-glow" aria-hidden="true" /><span className="fw-index">QUEST STORM / ARIZONA</span><h2 id="fw-last-title">Get the facts.<br /><em>Then decide.</em></h2><div><p>Start with a no-cost roof inspection and photos you can review.</p><button onClick={inspect}>Request a roof check <ArrowUpRight size={20} /></button><a href="tel:+16023996455">Call 602-399-6455 <ArrowUpRight size={17} /></a></div></section>
     </main>
     <footer className="fw-footer"><a href="#top" className="fw-footer-brand">quest<span>storm</span></a><span>Quest Storm by Quest Roofing · ROC #355136</span><a href="./PHOTO-CREDITS.html">Photography credits</a><a href="./index.html">All designs <ArrowUpRight size={16} /></a></footer>
     <RequestDialog open={contact} onClose={() => setContact(false)} />
