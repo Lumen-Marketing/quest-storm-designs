@@ -4,7 +4,7 @@ import {ArrowUpRight,ArrowDown,Desktop,DeviceMobile,Check,Play} from '@phosphor-
 import './gallery.css';
 const directions=[
   {name:'Ridge',number:'01',path:'./direction-1-after-the-storm.html',description:'An oversized condensed headline and a tightly composed photo grid. Explore roof hotspots, switch photographs, and scroll through stacked inspection sheets.',tags:['Photo grid','Big Shoulders + Hanken','Scroll stack']},
-  {name:'Fieldwork',number:'02',path:'./direction-2-roof-report.html',description:'Inspired by the DnD site: a moving blue light field, spacious type, and soft word reveals. Drag between street and roof views, then explore the photographic inspection guide.',tags:['Blue light','Bricolage + Sora','Photo reveal + word motion']},
+  {name:'Fieldwork',number:'02',path:'./direction-2-roof-report.html',description:'An editorial storm story with a full-screen photograph, oversized type, and a selectable field-photo rail. Drag between street and roof views, then open the photographic inspection steps.',tags:['Photo-led hero','Syne + Sora','Street-to-roof reveal']},
   {name:'Stormcut',number:'03',path:'./direction-3-stormline.html',description:'A navy, blue, and white editorial design. Asymmetric cut-through sections, flowing Grainient hero and footer, and Aurora light fields bring a bold new edge to the roofing story.',tags:['Asymmetric cuts','Blue + navy','Grainient + Aurora']},
   {name:'Clarity',number:'04',path:'./direction-4-clarity.html',description:'An editorial blue-and-white direction with a cinematic roof photo, an indexed sidebar, animated headings, and a stacked inspection story.',tags:['Editorial photo','Blue + white','Scroll stack']}
 ];
