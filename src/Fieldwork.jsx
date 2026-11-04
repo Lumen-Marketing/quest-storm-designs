@@ -12,6 +12,7 @@ import './motion-words.css';
 import './fieldwork-next.css';
 import '@fontsource-variable/instrument-sans';
 import './fieldwork-editorial.css';
+import './fieldwork-v3.css';
 
 const fieldViews = [
   { image: photos.storm, alt: 'Arizona home beneath a storm sky', title: 'From the street', note: 'From the street' },
