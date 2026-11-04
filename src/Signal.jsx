@@ -41,8 +41,8 @@ function App() {
           </div>
           <div className="sg-v3-hero-photo">
             <AnimatePresence mode="wait" initial={false}><motion.img key={view} src={views[view].image} alt={views[view].alt} fetchPriority={view === 0 ? 'high' : undefined} initial={reduced ? false : { opacity: .45, scale: 1.055 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: .15 }} transition={{ duration: reduced ? 0 : .55, ease: [.22, 1, .36, 1] }} /></AnimatePresence>
-            <span className="sg-v3-photo-coordinate">33°14′ N<br />111°38′ W</span>
-            <div className="sg-v3-hero-badge"><span>01 / 03</span><strong>What you see<br />from here is only<br /><em>the beginning.</em></strong><ArrowUpRight size={24} /></div>
+            <span className="sg-v3-photo-coordinate">AFTER HAIL<br />AFTER WIND</span>
+            <div className="sg-v3-hero-badge"><span>0{view + 1} / 03</span><strong>What you see<br />from here is only<br /><em>the beginning.</em></strong><ArrowUpRight size={24} /></div>
             <div className="sg-v3-scene-picker" role="group" aria-label="Explore roof views">{views.map((scene, i) => <button key={scene.label} className={view === i ? 'active' : ''} aria-pressed={view === i} onClick={() => setView(i)}><img src={scene.image} alt="" /><span>{scene.label}</span></button>)}</div>
           </div>
           <div className="sg-v3-hero-floor"><span>Start with what you can see.</span><button onClick={() => setDialog(true)}>Get a no-cost roof check <span><ArrowUpRight size={18} /></span></button><a href="#inspection">See how it works <ArrowDown size={17} /></a></div>

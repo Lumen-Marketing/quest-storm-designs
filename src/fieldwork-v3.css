@@ -3,7 +3,6 @@
 .fieldwork .fw-hero-intro:after { content: ''; position: absolute; right: -90px; top: -155px; width: 380px; height: 380px; border: 1px solid #93bfff4f; border-radius: 50%; pointer-events: none; }
 .fieldwork .fw-hero h1 { max-width: 850px; font-size: clamp(58px,6vw,86px); line-height: 1.02; letter-spacing: -.065em; }
 .fieldwork .fw-hero-gallery { position: relative; }
-.fieldwork .fw-hero-gallery:after { content: ''; position: absolute; z-index: 2; left: -115px; bottom: -215px; width: 330px; height: 330px; border: 50px solid #fff; border-radius: 50%; pointer-events: none; }
 .fieldwork .fw-roof-heading { gap: 55px; }
 .fieldwork .fw-comparison { border-radius: 20px 115px 20px 20px; }
 .fieldwork .fw-detail-list { position: relative; grid-template-columns: 1.06fr .94fr 1fr; gap: clamp(25px,4vw,65px); margin: 45px 0 0; }

@@ -188,7 +188,8 @@
   .sg-v3-nav-cta { display: none; }
   .sg-v3-hero h1 { font-size: 46px; }
   .sg-v3-hero-photo { height: 540px; }
-  .sg-v3-hero-badge { width: 220px; }
+  .sg-v3-hero-badge { width: 258px; }
+  .sg-v3-hero-badge strong { font-size: 28px; }
   .sg-v3-scene-picker button span { font-size: 10px; }
   .sg-v3-process-flow { width: 100%; }
 }

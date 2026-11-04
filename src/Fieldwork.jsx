@@ -69,7 +69,7 @@ function App() {
       <section className="fw-roof" id="roof" aria-labelledby="fw-roof-title">
         <Reveal className="fw-roof-heading"><h2 id="fw-roof-title"><MotionWords text="Look beyond" /> <em><MotionWords text="the street." delay={.12} /></em></h2><p>Storm damage isn’t always visible from the driveway. Move the slider to compare the street view with a closer roof view.</p></Reveal>
         <motion.div className="fw-comparison" initial={reduced ? false : { opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: .7, ease }}>
-          <img className="fw-comparison-under" src={photos.roof} alt="Close view of storm-damaged shingles" loading="lazy" />
+          <img className="fw-comparison-under" src={photos.roof} alt="Close view of roof shingles" loading="lazy" />
           <div className="fw-comparison-over" style={{ clipPath: `inset(0 ${100 - view}% 0 0)` }}><img src={photos.storm} alt="Arizona home viewed from the street under a storm sky" loading="lazy" /></div>
           <div className="fw-comparison-labels"><span>01 / FROM THE STREET</span><span>02 / ON THE ROOF</span></div>
           <div className="fw-comparison-divider" style={{ left: `${view}%` }}><span><ArrowLeft size={17} /><ArrowRight size={17} /></span></div>
