@@ -4,9 +4,18 @@ import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { ArrowUpRight, ArrowRight, ArrowDown, ArrowLeft, Plus, Minus, X, List, HouseLine, Camera } from '@phosphor-icons/react';
 import { photos, details, steps, questions, choice, ease } from './content';
 import RequestDialog from './RequestDialog';
+import MotionWords from './MotionWords';
 import './alternatives.css';
 import './fieldwork-clean.css';
 import './fieldwork-rework.css';
+import './motion-words.css';
+import './fieldwork-next.css';
+
+const fieldViews = [
+  { image: photos.storm, alt: 'Arizona home beneath a storm sky', title: 'From the street', note: '01 / THE STORM' },
+  { image: photos.work, alt: 'Roofing professional inspecting a tile roof', title: 'On the roof', note: '02 / THE INSPECTION' },
+  { image: photos.roof, alt: 'Close view of roof shingles', title: 'Up close', note: '03 / THE DETAIL' }
+];
 
 function Reveal({ children, className = '' }) {
   const reduced = useReducedMotion();
@@ -19,6 +28,7 @@ function App() {
   const [view, setView] = useState(54);
   const [step, setStep] = useState(0);
   const [faq, setFaq] = useState(null);
+  const [heroView, setHeroView] = useState(0);
   const reduced = useReducedMotion();
   const inspect = () => setContact(true);
 
@@ -37,49 +47,39 @@ function App() {
 
     <main id="main">
       <section className="fw-hero" aria-labelledby="fw-title">
-        <img className="fw-hero-photo" src={photos.work} alt="Roofing professional inspecting a home roof in Arizona" fetchPriority="high" />
-        <div className="fw-hero-shade" />
-        <div className="fw-hero-field" aria-hidden="true">FIELD<br />WORK<span>01 / THE STORM</span></div>
-        <div className="fw-hero-top"><span>ARIZONA / HAIL + WIND</span><span>QUEST STORM · BY QUEST ROOFING</span></div>
-        <div className="fw-hero-copy">
-          <motion.div initial={reduced ? false : { opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, ease }}>
-            <span className="fw-hero-kicker"><span className="fw-dot" /> AFTER THE STORM</span>
-            <h1 id="fw-title">Start with<br />the roof<span>.</span></h1>
-            <p>A closer look at the roof. Photos of what we find. A decision that stays yours.</p>
-            <a href="#roof" className="fw-hero-link">See what we look for <ArrowDown size={19} /></a>
-          </motion.div>
+        <div className="fw-hero-intro">
+          <div><span className="fw-hero-kicker"><span className="fw-dot" /> ARIZONA / AFTER HAIL + WIND</span>
+            <h1 id="fw-title"><MotionWords text="After the storm," /><br /><em><MotionWords text="look closer." delay={.14} /></em></h1></div>
+          <div className="fw-hero-intro-side"><span>THE QUEST STORM APPROACH / 01</span><p>The roof can look fine from the street. A closer inspection gives you photos, answers, and space to choose what comes next.</p><button onClick={inspect}>Get a no-cost roof check <ArrowUpRight size={20} /></button><small>No cost. No obligation.</small></div>
         </div>
-        <div className="fw-hero-card">
-          <div className="fw-card-top"><span>YOUR ROOF CHECK</span><Camera size={23} /></div>
-          <h2>Know what happened up there.</h2>
-          <p>We inspect and document the roof so you can review the facts before deciding what comes next.</p>
-          <div className="fw-card-progress" aria-label="Inspection includes a roof check, photos, and your choice"><span>01 <b>Look</b></span><i /><span>02 <b>Photos</b></span><i /><span>03 <b>Decide</b></span></div>
-          <button onClick={inspect}>Book a no-cost inspection <ArrowUpRight size={19} /></button>
-          <small>No cost. No obligation. You decide.</small>
+        <div className="fw-hero-gallery">
+          <AnimatePresence mode="wait" initial={false}><motion.img key={heroView} src={fieldViews[heroView].image} alt={fieldViews[heroView].alt} className="fw-hero-feature" fetchPriority={heroView === 0 ? 'high' : undefined} initial={reduced ? false : { opacity: .35, scale: 1.035 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .45, ease }} /></AnimatePresence>
+          <div className="fw-hero-gallery-shade" />
+          <div className="fw-hero-gallery-top"><span>{fieldViews[heroView].note}</span><span>QUEST STORM / FIELDWORK</span></div>
+          <div className="fw-hero-gallery-bottom"><strong>What you see<br /><em>is only the beginning.</em></strong><div className="fw-hero-view-picker" role="group" aria-label="Explore roof views">{fieldViews.map((item, index) => <button key={item.title} className={heroView === index ? 'active' : ''} aria-pressed={heroView === index} onClick={() => setHeroView(index)}><img src={item.image} alt="" /><span>{item.title}</span></button>)}</div></div>
         </div>
-        <div className="fw-photo-mark">ON THE ROOF <span>↗</span> / IN THE KNOW</div>
       </section>
 
       <div className="fw-facts" aria-label="Quest Storm information"><span>QUEEN CREEK, ARIZONA</span><span>ROC #355136</span><span>NO-COST ROOF INSPECTION</span><span>602-399-6455</span></div>
       <div className="fw-ribbon" aria-hidden="true"><div>FROM THE STREET <b>✳</b> TO THE ROOF <b>✳</b> TO A CLEARER DECISION <b>✳</b> FROM THE STREET <b>✳</b> TO THE ROOF <b>✳</b> TO A CLEARER DECISION <b>✳</b></div></div>
 
       <section className="fw-roof" id="roof" aria-labelledby="fw-roof-title">
-        <Reveal className="fw-roof-heading"><span className="fw-index">01 / THE ROOF</span><h2 id="fw-roof-title">The view from the street is only <em>the beginning.</em></h2><p>Hail and wind can leave details you cannot confirm from the driveway. Compare these illustrative views, then see what an inspection covers.</p></Reveal>
-        <div className="fw-comparison">
+        <Reveal className="fw-roof-heading"><span className="fw-index">01 / THE ROOF</span><h2 id="fw-roof-title"><MotionWords text="The view from the street is only" /> <em><MotionWords text="the beginning." delay={.12} /></em></h2><p>Hail and wind can leave details you cannot confirm from the driveway. Compare these illustrative views, then see what an inspection covers.</p></Reveal>
+        <motion.div className="fw-comparison" initial={reduced ? false : { opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: .7, ease }}>
           <img className="fw-comparison-under" src={photos.roof} alt="Close view of storm-damaged shingles" loading="lazy" />
           <div className="fw-comparison-over" style={{ clipPath: `inset(0 ${100 - view}% 0 0)` }}><img src={photos.storm} alt="Arizona home viewed from the street under a storm sky" loading="lazy" /></div>
           <div className="fw-comparison-labels"><span>01 / FROM THE STREET</span><span>02 / ON THE ROOF</span></div>
           <div className="fw-comparison-divider" style={{ left: `${view}%` }}><span><ArrowLeft size={17} /><ArrowRight size={17} /></span></div>
           <input type="range" min="8" max="92" value={view} onChange={e => setView(Number(e.target.value))} aria-label="Reveal street view and roof surface" />
           <span className="fw-comparison-tip">DRAG TO COMPARE</span>
-        </div>
-        <div className="fw-detail-list">{details.map((item, i) => <article key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+        </motion.div>
+        <div className="fw-detail-list">{details.map((item, i) => <motion.article key={item.title} initial={reduced ? false : { opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: .52, delay: i * .09, ease }}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.text}</p></motion.article>)}</div>
         <p className="fw-photo-note">Illustrative photography. Your inspection documents your own roof.</p>
       </section>
 
       <section className="fw-process" id="process" aria-labelledby="fw-process-title">
         <div className="fw-process-inner">
-          <Reveal className="fw-process-heading"><span className="fw-index">02 / FIELDWORK</span><h2 id="fw-process-title">Look. Document.<br /><em>Decide.</em></h2><p>Three simple steps, each one bringing the roof into focus.</p></Reveal>
+          <Reveal className="fw-process-heading"><span className="fw-index">02 / FIELDWORK</span><h2 id="fw-process-title"><MotionWords text="Look. Document." /><br /><em><MotionWords text="Decide." delay={.13} /></em></h2><p>Three simple steps, each one bringing the roof into focus.</p></Reveal>
           <div className="fw-process-grid">
             <div className="fw-step-list" role="group" aria-label="Inspection steps">{steps.map((item, i) => <button key={item.title} className={step === i ? 'active' : ''} aria-pressed={step === i} onClick={() => setStep(i)}><span className="fw-step-number">0{i + 1}</span><span className="fw-step-copy"><strong>{item.title}</strong><span>{item.subtitle}</span><small>{item.body}</small></span><ArrowUpRight size={20} /></button>)}</div>
             <div className="fw-process-visual"><AnimatePresence mode="wait" initial={false}><motion.img key={step} src={steps[step].image} alt={steps[step].subtitle} loading="lazy" initial={reduced ? false : { opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .3, ease }} /></AnimatePresence><div className="fw-process-label"><span>FIELD NOTE / 0{step + 1}</span><strong>{steps[step].subtitle}</strong></div></div>
@@ -87,11 +87,11 @@ function App() {
         </div>
       </section>
 
-      <section className="fw-choice" aria-labelledby="fw-choice-title"><img className="fw-choice-photo" src={photos.roof} alt="Close view of roof shingles" loading="lazy" /><div className="fw-choice-copy"><span className="fw-index">03 / YOUR CALL</span><h2 id="fw-choice-title">Your roof.<br /><em>Your decision.</em></h2></div><div className="fw-choice-card"><span>WHAT HAPPENS NEXT?</span><p>{choice}</p><button onClick={inspect}>Let’s take a look <ArrowUpRight size={19} /></button><small>NO COST / NO OBLIGATION</small></div><span className="fw-choice-line" aria-hidden="true" /></section>
+      <section className="fw-choice" aria-labelledby="fw-choice-title"><img className="fw-choice-photo" src={photos.roof} alt="Close view of roof shingles" loading="lazy" /><div className="fw-choice-copy"><span className="fw-index">03 / YOUR CALL</span><h2 id="fw-choice-title"><MotionWords text="Your roof." /><br /><em><MotionWords text="Your decision." delay={.1} /></em></h2></div><motion.div className="fw-choice-card" initial={reduced ? false : { opacity: 0, y: 36, rotate: -2 }} whileInView={{ opacity: 1, y: 0, rotate: 2 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .65, ease }}><span>WHAT HAPPENS NEXT?</span><p>{choice}</p><button onClick={inspect}>Let’s take a look <ArrowUpRight size={19} /></button><small>NO COST / NO OBLIGATION</small></motion.div><span className="fw-choice-line" aria-hidden="true" /></section>
 
-      <section className="fw-questions" id="questions" aria-labelledby="fw-questions-title"><Reveal className="fw-questions-heading"><span className="fw-index">04 / GOOD QUESTIONS</span><h2 id="fw-questions-title">Straight<br />answers.</h2><p>Questions are normal. Here are a few answers before anyone gets on the roof.</p></Reveal><div className="fw-question-stage"><div className="fw-question-list">{questions.map(([q, a], i) => <div key={q}><button aria-expanded={faq === i} aria-controls={`fw-answer-${i}`} onClick={() => setFaq(faq === i ? null : i)}><span>0{i + 1}</span><strong>{q}</strong>{faq === i ? <Minus size={19} /> : <Plus size={19} />}</button><AnimatePresence initial={false}>{faq === i && <motion.p id={`fw-answer-${i}`} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: reduced ? 0 : .22, ease }}>{a}</motion.p>}</AnimatePresence></div>)}</div><div className="fw-question-photo"><img src={photos.work} alt="Roofing professional at work on a roof" loading="lazy" /><span>REAL PHOTOS.<br />CLEAR ANSWERS.</span><small>FIELD NOTE / 04</small></div></div></section>
+      <section className="fw-questions" id="questions" aria-labelledby="fw-questions-title"><Reveal className="fw-questions-heading"><span className="fw-index">04 / GOOD QUESTIONS</span><h2 id="fw-questions-title"><MotionWords text="Straight" /><br /><MotionWords text="answers." delay={.1} /></h2><p>Questions are normal. Here are a few answers before anyone gets on the roof.</p></Reveal><div className="fw-question-stage"><div className="fw-question-list">{questions.map(([q, a], i) => <div key={q}><button aria-expanded={faq === i} aria-controls={`fw-answer-${i}`} onClick={() => setFaq(faq === i ? null : i)}><span>0{i + 1}</span><strong>{q}</strong>{faq === i ? <Minus size={19} /> : <Plus size={19} />}</button><AnimatePresence initial={false}>{faq === i && <motion.p id={`fw-answer-${i}`} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: reduced ? 0 : .22, ease }}>{a}</motion.p>}</AnimatePresence></div>)}</div><motion.div className="fw-question-photo" initial={reduced ? false : { opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .65, ease }}><img src={photos.work} alt="Roofing professional at work on a roof" loading="lazy" /><span>REAL PHOTOS.<br />CLEAR ANSWERS.</span><small>FIELD NOTE / 04</small></motion.div></div></section>
 
-      <section className="fw-last" aria-labelledby="fw-last-title"><div className="fw-last-glow" aria-hidden="true" /><span className="fw-index">QUEST STORM / ARIZONA</span><h2 id="fw-last-title">Get the facts.<br /><em>Then decide.</em></h2><div><p>Start with a no-cost roof inspection and photos you can review.</p><button onClick={inspect}>Request a roof check <ArrowUpRight size={20} /></button><a href="tel:+16023996455">Call 602-399-6455 <ArrowUpRight size={17} /></a></div></section>
+      <section className="fw-last" aria-labelledby="fw-last-title"><div className="fw-last-glow" aria-hidden="true" /><span className="fw-index">QUEST STORM / ARIZONA</span><h2 id="fw-last-title"><MotionWords text="Get the facts." /><br /><em><MotionWords text="Then decide." delay={.1} /></em></h2><div><p>Start with a no-cost roof inspection and photos you can review.</p><button onClick={inspect}>Request a roof check <ArrowUpRight size={20} /></button><a href="tel:+16023996455">Call 602-399-6455 <ArrowUpRight size={17} /></a></div></section>
     </main>
     <footer className="fw-footer"><a href="#top" className="fw-footer-brand">quest<span>storm</span></a><span>Quest Storm by Quest Roofing · ROC #355136</span><a href="./PHOTO-CREDITS.html">Photography credits</a><a href="./index.html">All designs <ArrowUpRight size={16} /></a></footer>
     <RequestDialog open={contact} onClose={() => setContact(false)} />
