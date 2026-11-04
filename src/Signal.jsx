@@ -41,11 +41,19 @@ function App() {
           </div>
           <div className="sg-v3-hero-photo">
             <AnimatePresence mode="wait" initial={false}><motion.img key={view} src={views[view].image} alt={views[view].alt} fetchPriority={view === 0 ? 'high' : undefined} initial={reduced ? false : { opacity: .45, scale: 1.055 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: .15 }} transition={{ duration: reduced ? 0 : .55, ease: [.22, 1, .36, 1] }} /></AnimatePresence>
-            <span className="sg-v3-photo-coordinate">AFTER HAIL<br />AFTER WIND</span>
-            <div className="sg-v3-hero-badge"><span>0{view + 1} / 03</span><strong>What you see<br />from here is only<br /><em>the beginning.</em></strong><ArrowUpRight size={24} /></div>
+            <div className="sg-v3-hero-floor"><span>Start with a closer look.</span><button onClick={() => setDialog(true)}>Get a no-cost roof check <span><ArrowUpRight size={18} /></span></button><a href="#process">See how it works <ArrowDown size={17} /></a></div>
             <div className="sg-v3-scene-picker" role="group" aria-label="Explore roof views">{views.map((scene, i) => <button key={scene.label} className={view === i ? 'active' : ''} aria-pressed={view === i} onClick={() => setView(i)}><img src={scene.image} alt="" /><span>{scene.label}</span></button>)}</div>
           </div>
-          <div className="sg-v3-hero-floor"><span>Start with what you can see.</span><button onClick={() => setDialog(true)}>Get a no-cost roof check <span><ArrowUpRight size={18} /></span></button><a href="#inspection">See how it works <ArrowDown size={17} /></a></div>
+        </section>
+
+        <section className="sg-v3-process" id="process" aria-labelledby="sg-v3-process-title">
+          <div className="sg-v3-process-head"><motion.h2 id="sg-v3-process-title" {...reveal}>A roof check,<br /><em>without the guesswork.</em></motion.h2><p>One visit gives you more to work with. The decision stays with you.</p></div>
+          <div className="sg-v3-process-photo"><img src={photos.work} alt="Roofing professional inspecting a tile roof" loading="lazy" /><span>THE VIEW FROM UP THERE</span></div>
+          <div className="sg-v3-process-flow">
+            <motion.article {...reveal}><span>01</span><div><h3>We look.</h3><p>With your permission, a roofing professional checks the roof and documents its condition.</p></div><Camera size={28} weight="light" /></motion.article>
+            <motion.article {...reveal}><span>02</span><div><h3>You see.</h3><p>Look through the photos and ask questions about what was found.</p></div><ArrowRight size={28} weight="light" /></motion.article>
+            <motion.article {...reveal}><span>03</span><div><h3>You decide.</h3><p>If damage is found, you choose whether to speak with your insurer about a repair claim.</p></div><CheckCircle size={28} weight="light" /></motion.article>
+          </div>
         </section>
 
         <section className="sg-v3-inspection" id="inspection" aria-labelledby="sg-v3-inspection-title">
@@ -58,16 +66,6 @@ function App() {
         </section>
 
         <div className="sg-v3-info-strip" aria-label="Quest Roofing details"><span>QUEEN CREEK, ARIZONA</span><span>ROC #355136</span><span>NO-COST ROOF INSPECTION</span><a href="tel:+16023996455">602-399-6455 <ArrowUpRight size={16} /></a></div>
-
-        <section className="sg-v3-process" id="process" aria-labelledby="sg-v3-process-title">
-          <div className="sg-v3-process-head"><motion.h2 id="sg-v3-process-title" {...reveal}>A roof check,<br /><em>without the guesswork.</em></motion.h2><p>One visit gives you more to work with. The decision stays with you.</p></div>
-          <div className="sg-v3-process-photo"><img src={photos.work} alt="Roofing professional inspecting a tile roof" loading="lazy" /><span>THE VIEW FROM UP THERE</span></div>
-          <div className="sg-v3-process-flow">
-            <motion.article {...reveal}><span>01</span><div><h3>We look.</h3><p>With your permission, a roofing professional checks the roof and documents its condition.</p></div><Camera size={28} weight="light" /></motion.article>
-            <motion.article {...reveal}><span>02</span><div><h3>You see.</h3><p>Look through the photos and ask questions about what was found.</p></div><ArrowRight size={28} weight="light" /></motion.article>
-            <motion.article {...reveal}><span>03</span><div><h3>You decide.</h3><p>If damage is found, you choose whether to speak with your insurer about a repair claim.</p></div><CheckCircle size={28} weight="light" /></motion.article>
-          </div>
-        </section>
 
         <section className="sg-v3-choice" aria-labelledby="sg-v3-choice-title"><img src={photos.storm} alt="Arizona home beneath a storm sky" loading="lazy" /><div className="sg-v3-choice-copy"><span>THE NEXT STEP IS YOURS</span><h2 id="sg-v3-choice-title">Your roof.<br /><em>Your call.</em></h2><p>The inspection does not commit you to a repair. It gives you a clearer picture before you decide what to do next.</p><button onClick={() => setDialog(true)}>Let’s take a look <span><ArrowUpRight size={18} /></span></button></div><div className="sg-v3-choice-arc" aria-hidden="true" /></section>
 
