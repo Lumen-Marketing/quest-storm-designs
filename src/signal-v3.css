@@ -260,6 +260,7 @@
   .sg-v3-process-head { margin-bottom: 30px; }
   .sg-v3-process h2 { font-size: clamp(48px, 10vw, 70px); }
   .sg-v3-process-photo { height: 380px; border-radius: 62px 9px 62px 9px; }
+  .sg-v3-process-photo img { object-position: 76% center; }
   .sg-v3-process-flow { display: block; width: 92%; margin: -44px auto 0; padding: 16px 26px; border-radius: 24px 24px 0 0; }
   .sg-v3-process-flow article { min-height: 0; padding: 19px 0; border: 0; border-bottom: 1px solid #cbd8e8; }
   .sg-v3-process-flow article>span { margin-bottom: 9px; }
