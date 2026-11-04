@@ -11,7 +11,7 @@ import './signal-rework.css';
 import './motion-words.css';
 import './signal-next.css';
 import '@fontsource-variable/instrument-sans';
-import './editorial-refine.css';
+import './signal-editorial.css';
 
 const focus=[
   {index:'01',title:'Surface',detail:'See the shingles and roof materials up close.',image:photos.roof,tag:'WHAT THE STREET CAN’T SHOW'},
