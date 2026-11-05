@@ -3,13 +3,13 @@ import {createRoot} from 'react-dom/client';
 import {ArrowUpRight,ArrowDown,Desktop,DeviceMobile,Check,Play} from '@phosphor-icons/react';
 import './gallery.css';
 const directions=[
-  {name:'Haven',number:'06',path:'./direction-6-haven.html',description:'An architectural white canvas, sculpted navigation, panoramic photography, and a hands-on roof explorer.',tags:['Architectural','Airy typography','Photo explorer']},
-  {name:'Atmos',number:'07',path:'./direction-7-atmos.html',description:'Real Arizona roof photography opens a high-contrast editorial story. Explore an interactive inspection report, real photography, and a clear three-step process.',tags:['Real roof photography','Instrument Sans','Interactive report']},
   {name:'Ridge',number:'01',path:'./direction-1-after-the-storm.html',description:'An oversized condensed headline and a tightly composed photo grid. Explore roof hotspots, switch photographs, and scroll through stacked inspection sheets.',tags:['Photo grid','Big Shoulders + Hanken','Scroll stack']},
   {name:'Fieldwork',number:'02',path:'./direction-2-roof-report.html',description:'A roof photograph opens the story, with a compact inspection note layered over it. Compare street and roof views, review all three steps, and open clear answers.',tags:['Photo-led','Blue + white','Roof comparison']},
   {name:'Stormcut',number:'03',path:'./direction-3-stormline.html',description:'A navy, blue, and white editorial design. Asymmetric cut-through sections, flowing Grainient hero and footer, and Aurora light fields bring a bold new edge to the roofing story.',tags:['Asymmetric cuts','Blue + navy','Grainient + Aurora']},
   {name:'Clarity',number:'04',path:'./direction-4-clarity.html',description:'An editorial blue-and-white direction with a cinematic roof photo, an indexed sidebar, animated headings, and a stacked inspection story.',tags:['Editorial photo','Blue + white','Scroll stack']},
-  {name:'Signal',number:'05',path:'./direction-5-signal.html',description:'A vivid blue direction with floating inspection notes and an interactive roof-focus panel. Switch between surface, edges, and context before following the three-step path.',tags:['Floating panels','Blue + white','Interactive focus']}
+  {name:'Signal',number:'05',path:'./direction-5-signal.html',description:'A vivid blue direction with floating inspection notes and an interactive roof-focus panel. Switch between surface, edges, and context before following the three-step path.',tags:['Floating panels','Blue + white','Interactive focus']},
+  {name:'Haven',number:'06',path:'./direction-6-haven.html',description:'An architectural white canvas, sculpted navigation, panoramic photography, and a hands-on roof explorer.',tags:['Architectural','Airy typography','Photo explorer']},
+  {name:'Atmos',number:'07',path:'./direction-7-atmos.html',description:'Real Arizona roof photography opens a high-contrast editorial story. Explore an interactive inspection report, real photography, and a clear three-step process.',tags:['Real roof photography','Instrument Sans','Interactive report']}
 ];
 function Preview({direction,mode}) {
   const container=useRef(null);
