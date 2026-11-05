@@ -184,6 +184,10 @@
   .sg-v3-footer-main>div { margin-top: 35px; }
   .sg-v3-footer-bottom { flex-wrap: wrap; justify-content: start; gap: 18px 25px; padding: 25px 22px; }
 }
+.sg-v3-process-head h2,.sg-v3-section-intro h2{max-width:min(100%,1050px);text-wrap:balance}
+.sg-v3-process-head,.sg-v3-section-intro{gap:clamp(24px,4vw,64px)}
+.sg-v3-process-head p,.sg-v3-section-intro p{flex:0 0 min(27%,320px)}
+@media(max-width:950px){.sg-v3-process-head p,.sg-v3-section-intro p{flex-basis:auto}}
 @media(max-width:390px){
   .sg-v3-nav-cta { display: none; }
   .sg-v3-hero h1 { font-size: 46px; }

@@ -94,7 +94,7 @@ function App() {
         </div>
         <div className="sc-hero-bottom-band sc-container">
           <div className="sc-hero-headline">
-            <h1 id="hero-title" className={still ? '' : 'sc-visually-hidden'}>STORM HIT HOME?<br/>LET’S TAKE<br/>A CLOSER LOOK.</h1>
+            <h1 id="hero-title" className={still ? '' : 'sc-visually-hidden'}>STORM HIT HOME? LET’S TAKE A CLOSER LOOK.</h1>
             {!still && <div className="sc-tech-lines" aria-hidden="true">{['STORM HIT HOME?', 'LET’S TAKE', 'A CLOSER LOOK.'].map(line => <div className="sc-tech-line" key={line}>
               <TechText text={line} fontFamily="Outfit" fontWeight={600} fontSize={150} align="left"
                 reveal="letter" dashLength={4} dashGap={2} specks={15} intro="none" introDuration={2}
@@ -112,7 +112,7 @@ function App() {
         <LightField paused={still}/>
         <div className="sc-container">
           <div className="sc-section-label"><span>01 / LOOK BEYOND THE DRIVEWAY</span><span aria-hidden="true">+ &nbsp; +</span></div>
-          <Reveal className="sc-section-head"><h2 id="roof-title">THE GROUND ONLY<br/>TELLS <span>HALF THE STORY.</span></h2><p>Your roof can look fine from the street.<br/>A closer inspection replaces the guesswork with something you can see.</p></Reveal>
+          <Reveal className="sc-section-head"><h2 id="roof-title">THE GROUND ONLY TELLS <span>HALF THE STORY.</span></h2><p>Your roof can look fine from the street.<br/>A closer inspection replaces the guesswork with something you can see.</p></Reveal>
           <div className="sc-inspection">
             <figure className={`sc-inspection-photo sc-detail-${detail}`}>
               <img src={photos.roof} alt="Close view of damaged shingles, showing the roof surface an inspection can document" loading="lazy"/>
@@ -135,7 +135,7 @@ function App() {
         <LightField paused={still}/>
         <div className="sc-container">
           <div className="sc-section-label"><span>02 / FROM UNCERTAINTY TO UNDERSTANDING</span><span>THREE SIMPLE STEPS</span></div>
-          <Reveal className="sc-process-title"><h2 id="process-title">A CLOSER LOOK.<br/><span>A CLEARER NEXT STEP.</span></h2><ArrowUpRight size={74} weight="light" aria-hidden="true"/></Reveal>
+          <Reveal className="sc-process-title"><h2 id="process-title">A CLOSER LOOK. <span>A CLEARER NEXT STEP.</span></h2><ArrowUpRight size={74} weight="light" aria-hidden="true"/></Reveal>
           <div className="sc-steps">{steps.map((item, i) => <Reveal key={item.title} className={`sc-step sc-step-${i + 1}`}>
             <div className="sc-step-top"><span>0{i + 1}</span><h3>{item.title}</h3></div>
             <div className="sc-step-photo"><img src={item.image} alt={['A roofing professional working on a roof in Phoenix', 'Damaged shingles photographed up close', 'A home in Arizona under storm clouds'][i]} loading="lazy"/><ArrowUpRight size={28} aria-hidden="true"/></div>
@@ -148,7 +148,7 @@ function App() {
         <LightField paused={still}/>
         <div className="sc-container">
           <div className="sc-section-label"><span>03 / INFORMATION. THEN A DECISION.</span><span aria-hidden="true">↗</span></div>
-          <Reveal className="sc-decision-content"><h2 id="decision-title">YOUR ROOF.<br/><span>YOUR CALL.</span></h2><div><p>{choice}</p><p className="sc-decision-note">No pressure. Just a place to start.</p><Action light onClick={inspect}>Let’s take a look</Action></div></Reveal>
+          <Reveal className="sc-decision-content"><h2 id="decision-title">YOUR ROOF. <span>YOUR CALL.</span></h2><div><p>{choice}</p><p className="sc-decision-note">No pressure. Just a place to start.</p><Action light onClick={inspect}>Let’s take a look</Action></div></Reveal>
         </div>
       </section>
 
@@ -156,7 +156,7 @@ function App() {
         <LightField paused={still}/>
         <div className="sc-container">
           <div className="sc-section-label"><span>04 / CLEAR UP THE WHAT-IFS</span><span aria-hidden="true">+ &nbsp; +</span></div>
-          <div className="sc-faq-layout"><Reveal className="sc-faq-heading"><h2 id="questions-title">GOOD QUESTIONS.<br/><span>STRAIGHT<br/>ANSWERS.</span></h2><p>You should feel clear about<br/>the next step. Ask away.</p><a href="tel:+16023996455">Talk to us<ArrowUpRight size={21}/></a></Reveal>
+          <div className="sc-faq-layout"><Reveal className="sc-faq-heading"><h2 id="questions-title">GOOD QUESTIONS. <span>STRAIGHT ANSWERS.</span></h2><p>You should feel clear about<br/>the next step. Ask away.</p><a href="tel:+16023996455">Talk to us<ArrowUpRight size={21}/></a></Reveal>
             <div className="sc-questions">{questions.map(([q, a], i) => <article key={q}>
               <button aria-expanded={faq === i} aria-controls={`sc-answer-${i}`} onClick={() => setFaq(faq === i ? null : i)}><span>0{i + 1}</span><h3>{q}</h3>{faq === i ? <Minus size={22}/> : <Plus size={22}/>}</button>
               <div id={`sc-answer-${i}`} hidden={faq !== i}><p>{a}</p></div>
@@ -170,7 +170,7 @@ function App() {
       <LightField grain paused={still}/>
       <div className="sc-container">
         <div className="sc-section-label"><span>YOUR HOME. YOUR PEACE OF MIND.</span><a href="#top">BACK TO TOP<ArrowUpRight size={16}/></a></div>
-        <Reveal className="sc-footer-invite"><h2>LET’S TAKE<br/>A <span>CLOSER LOOK.</span></h2><div><p>A no-cost roof inspection.<br/>Your next step starts here.</p><Action light onClick={inspect}>Request an inspection</Action></div></Reveal>
+        <Reveal className="sc-footer-invite"><h2>LET’S TAKE A <span>CLOSER LOOK.</span></h2><div><p>A no-cost roof inspection.<br/>Your next step starts here.</p><Action light onClick={inspect}>Request an inspection</Action></div></Reveal>
         <div className="sc-footer-links"><a className="sc-footer-phone" href="tel:+16023996455">602-399-6455<ArrowUpRight size={23}/></a><div><a href="#roof">The inspection</a><a href="#process">How it works</a><a href="#questions">Questions</a></div><div><a href="./index.html">All four designs<ArrowUpRight size={15}/></a><a href="./PHOTO-CREDITS.html">Photography credits<ArrowUpRight size={15}/></a></div></div>
         <div className="sc-wordmark" aria-hidden="true">QUEST STORM<span>↗</span></div>
         <div className="sc-footer-bottom"><span>QUEST STORM BY QUEST ROOFING</span><span>ARIZONA / HAIL & WIND INSPECTIONS</span><button aria-pressed={paused} onClick={() => setPaused(!paused)} disabled={Boolean(reduce)}>{still ? <Play size={13}/> : <Pause size={13}/>} {reduce ? 'Reduced motion enabled' : paused ? 'Resume motion' : 'Pause motion'}</button></div>

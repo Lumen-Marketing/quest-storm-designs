@@ -10,3 +10,7 @@
 @media(prefers-reduced-motion:reduce){.nd *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 @media(max-width:700px){.hv-star{display:none}}
+.haven .nd-nav nav{top:14px;padding:12px 28px;border-radius:999px}
+.haven .nd-nav nav:before,.haven .nd-nav nav:after{display:none}
+.haven em{font-family:inherit;font-style:normal}
+@media(max-width:700px){.haven .nd-nav nav{top:76px;border-radius:0;padding:20px 6%}}

@@ -47,7 +47,7 @@ function App() {
         </section>
 
         <section className="sg-v3-process" id="process" aria-labelledby="sg-v3-process-title">
-          <div className="sg-v3-process-head"><motion.h2 id="sg-v3-process-title" {...reveal}>A roof check,<br /><em>without the guesswork.</em></motion.h2><p>One visit gives you more to work with. The decision stays with you.</p></div>
+          <div className="sg-v3-process-head"><motion.h2 id="sg-v3-process-title" {...reveal}>A roof check, <em>without the guesswork.</em></motion.h2><p>One visit gives you more to work with. The decision stays with you.</p></div>
           <div className="sg-v3-process-photo"><img src={photos.work} alt="Roofing professional inspecting a tile roof" loading="lazy" /><span>THE VIEW FROM UP THERE</span></div>
           <div className="sg-v3-process-flow">
             <motion.article {...reveal}><span>01</span><div><h3>We look.</h3><p>With your permission, a roofing professional checks the roof and documents its condition.</p></div><Camera size={28} weight="light" /></motion.article>
@@ -57,7 +57,7 @@ function App() {
         </section>
 
         <section className="sg-v3-inspection" id="inspection" aria-labelledby="sg-v3-inspection-title">
-          <motion.div className="sg-v3-section-intro" {...reveal}><h2 id="sg-v3-inspection-title">The street<br />is <em>one angle.</em></h2><p>Hail and wind can leave details you cannot confirm from the driveway. We look closer and show you what we find.</p></motion.div>
+          <motion.div className="sg-v3-section-intro" {...reveal}><h2 id="sg-v3-inspection-title">The street is <em>one angle.</em></h2><p>Hail and wind can leave details you cannot confirm from the driveway. We look closer and show you what we find.</p></motion.div>
           <div className="sg-v3-inspection-stage">
             <div className="sg-v3-detail-photo"><AnimatePresence mode="wait" initial={false}><motion.img key={`detail-${view}`} src={views[view].image} alt={views[view].alt} loading="lazy" initial={reduced ? false : { opacity: .4, scale: 1.045 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .45 }} /></AnimatePresence><span>PHOTO VIEW / 0{view + 1}</span></div>
             <div className="sg-v3-detail-aside"><div className="sg-v3-detail-mark" aria-hidden="true">↗</div><span>THE CLOSER LOOK</span><h3>{views[view].label}.</h3><p>{views[view].note}</p><div className="sg-v3-detail-tabs" role="group" aria-label="Choose an inspection view">{views.map((scene, i) => <button key={scene.label} className={view === i ? 'active' : ''} aria-pressed={view === i} onClick={() => setView(i)}><span>0{i + 1}</span>{scene.label}<ArrowUpRight size={17} /></button>)}</div><small>Illustrative photography. Your inspection documents your own roof.</small></div>
